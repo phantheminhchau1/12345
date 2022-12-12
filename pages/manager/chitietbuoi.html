@@ -42,18 +42,19 @@ arr = arr.slice(0,arr.length-2);
 var someDate = new Date(document.getElementsByClassName("form-control")[1].value);
 someDate = (someDate.getTime()/1000)-7*3600;
 var buoi = document.getElementsByClassName("form-control")[2].value;
+var lop = document.getElementsByClassName("typeahead tt-input")[1].value;
 
 if (buoi == "Sáng") {
     //bs
     arr.forEach(function (item, index) {
-                if (parseInt(item.slice(0,10))>someDate&&item.slice(10,15)=="10a1"&&parseInt(item.slice(0,10))<(someDate+3600*12)) {
+                if (parseInt(item.slice(0,10))>someDate&&item.slice(10,15)==lop&&parseInt(item.slice(0,10))<(someDate+3600*12)) {
                     re = item;
                 };
     });
 } else {
   //bc
     arr.forEach(function (item, index) {
-                if (parseInt(item.slice(0,10))>(someDate+3600*12)&&item.slice(10,15)=="10a1"&&parseInt(item.slice(0,10))<(someDate+3600*24)) {
+                if (parseInt(item.slice(0,10))>(someDate+3600*12)&&item.slice(10,15)==lop&&parseInt(item.slice(0,10))<(someDate+3600*24)) {
                     re = item;
                 };
     });
